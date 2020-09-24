@@ -1,0 +1,131 @@
+.footer__topBtn {
+  background-color: #37475a;
+  padding: 4px;
+  color: white;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer__topBtn:hover {
+  cursor: pointer;
+}
+
+.footer__content {
+  width: 100%;
+  background-color: #232f3e;
+}
+
+.footer__list {
+  list-style: none;
+}
+
+.footer__lang {
+  border: 1px solid white;
+  color: white;
+  display: flex;
+  width: 90px;
+  height: 30px;
+  padding: 2px;
+  border-radius: 2px;
+}
+
+.footer__links {
+  border-bottom: 1px solid #37475a;
+}
+
+.footer__country {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  word-wrap: break-word;
+}
+
+.footer__country small:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.footer__extraLinks {
+  background-color: #131a22;
+}
+
+.footer__list li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.footer__copyRight {
+  background-color: #131a22;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media (min-width: 300px) {
+  .footer {
+    margin-top: 1000%;
+  }
+}
+
+@media (min-width: 360px) {
+  .footer {
+    margin-top: 880%;
+  }
+}
+
+@media (min-width: 370px) {
+  .footer {
+    margin-top: 850%;
+  }
+}
+
+@media (min-width: 411px) {
+  .footer {
+    margin-top: 770%;
+  }
+}
+
+@media (min-width: 412px) {
+  .footer {
+    margin-top: 770%;
+  }
+}
+
+@media (min-width: 414px) {
+  .footer {
+    margin-top: 760%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) {
+  .footer {
+    margin-top: 485%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) {
+  .footer {
+    margin-top: 230%;
+  }
+}
+
+@media (min-width: 800px) {
+  .footer {
+    margin-top: 215%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+  .footer {
+    margin-top: 115%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 1100px) {
+  .footer {
+    margin-top: 95%;
+  }
+}

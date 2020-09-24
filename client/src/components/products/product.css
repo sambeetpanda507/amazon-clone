@@ -1,0 +1,47 @@
+.product {
+  position: absolute;
+  top: 65vh;
+  width: 100%;
+  z-index: 100;
+}
+
+.todaysdeal {
+  margin-top: 30px;
+  border: 2px solid lightgray;
+  width: 100%;
+  overflow-x: scroll;
+  background-color: #ffff;
+}
+
+.homeFurnishing {
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.homeWorking {
+  margin-top: 30px;
+}
+
+.homeWorking__img {
+  height: 300px;
+}
+
+.homeWorking__img img {
+  height: 300px !important;
+}
+
+.product__pointer:hover {
+  cursor: pointer;
+}
+
+.todaysdeal__img:hover {
+  transform: scale(1.06, 1.06);
+  transition: ease-in 0.3s;
+  cursor: pointer;
+  box-shadow: 2px 4px 19px 0px rgba(0, 0, 0, 0.75);
+}
+
+.todaysdeal__img {
+  transition: ease-in 0.3s;
+}

@@ -1,0 +1,26 @@
+.signin {
+  height: 100vh !important;
+  width: 100%;
+}
+
+.signin__logo {
+  padding: 20px;
+}
+.signin__logo img {
+  height: 40px;
+}
+
+.signin__btn {
+  border: 1px solid #a88734 !important;
+  background-color: #f3ce74 !important;
+  font-weight: bold !important;
+}
+
+.signin__form {
+  min-height: 60vh;
+  min-width: 30vw;
+}
+
+.signin__signup {
+  min-width: 35vw !important;
+}
