@@ -18,6 +18,10 @@ const userSchema = new Schema(
     },
     resetToken: String,
     tokenExpiration: Date,
+    cart: {
+      cartItem: Number,
+      products: [{ productId: String, productName: String, price: Number }],
+    },
   },
   { timestamps: true }
 );

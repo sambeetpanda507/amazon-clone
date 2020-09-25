@@ -87,4 +87,7 @@ router.patch(
   userController.setNewPassword
 );
 
+// http://localhost:8080/api/cart
+router.post("/api/cart", userController.addToCart);
+
 module.exports = router;

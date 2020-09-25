@@ -250,3 +250,7 @@ module.exports.setNewPassword = (req, res, next) => {
       // });
     });
 };
+
+module.exports.addToCart = (req, res, next) => {
+  console.log(req.body);
+};

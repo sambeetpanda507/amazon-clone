@@ -33,7 +33,7 @@ const SignIn = ({ history }) => {
     })
       .then((result) => {
         if (result.request.status === 201 || result.request.status === 200) {
-          setUser(result.data);
+          setUser({ userData: result.data, isLoggedin: true });
           localStorage.setItem(
             "login",
             JSON.stringify({

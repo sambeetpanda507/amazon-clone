@@ -14,28 +14,33 @@ import Dishwashwer from "./components/products/Dishwashwer";
 import WashingMachines from "./components/products/WashingMachines";
 import Televisions from "./components/products/Televisions";
 import Refrigerators from "./components/products/Refrigerators";
+import { CartProvider } from "./CartContext";
+import Cart from "./components/cart/Cart";
 
 function App() {
   return (
     <UserProvider>
-      <Router>
-        <div className="app">
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/signin" component={SignIn} />
-            <Route path="/signup" component={SignUp} />
-            <Route path="/forgot" component={Forgot} />
-            <Route path="/reset/:token" exact component={Reset} />
-            <Route path="/products/dishwashers" component={Dishwashwer} />
-            <Route
-              path="/products/washingmachines"
-              component={WashingMachines}
-            />
-            <Route path="/products/televisions" component={Televisions} />
-            <Route path="/products/refrigerators" component={Refrigerators} />
-          </Switch>
-        </div>
-      </Router>
+      <CartProvider>
+        <Router>
+          <div className="app">
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/signin" component={SignIn} />
+              <Route path="/signup" component={SignUp} />
+              <Route path="/forgot" component={Forgot} />
+              <Route path="/reset/:token" exact component={Reset} />
+              <Route path="/products/dishwashers" component={Dishwashwer} />
+              <Route
+                path="/products/washingmachines"
+                component={WashingMachines}
+              />
+              <Route path="/products/televisions" component={Televisions} />
+              <Route path="/products/refrigerators" component={Refrigerators} />
+              <Route path="/cart" component={Cart} />
+            </Switch>
+          </div>
+        </Router>
+      </CartProvider>
     </UserProvider>
   );
 }

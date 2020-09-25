@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./header.css";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
@@ -18,6 +18,7 @@ import Badge from "@material-ui/core/Badge";
 import Avatar from "@material-ui/core/Avatar";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../UserContext";
+import { CartContext } from "../../CartContext";
 
 const useStyles = makeStyles({
   list: {
@@ -35,6 +36,7 @@ function Header({ history }) {
   });
 
   const [user, setUser] = React.useContext(UserContext);
+  const value = useContext(CartContext);
 
   const signoutHandler = () => {
     setUser(null);
@@ -116,6 +118,7 @@ function Header({ history }) {
   );
   return (
     <div className="header">
+      {/* <h1>{typeof value.count + " " + value.count}</h1> */}
       <nav className="navbar navbar-expand-lg navbar-dark sticky-top">
         <React.Fragment key={"left"}>
           <div className="header__wrapper">
@@ -239,11 +242,13 @@ function Header({ history }) {
               <span className="nav-link">Try Prime</span>
             </li>
             <li className="nav-item">
-              <span className="nav-link" tabIndex="-1" aria-disabled="true">
-                <Badge badgeContent={0} color="primary">
-                  <ShoppingCartIcon />
-                </Badge>
-              </span>
+              <Link to="/cart">
+                <span className="nav-link" tabIndex="-1" aria-disabled="true">
+                  <Badge badgeContent={value.count} color="primary">
+                    <ShoppingCartIcon />
+                  </Badge>
+                </span>
+              </Link>
             </li>
           </ul>
         </div>

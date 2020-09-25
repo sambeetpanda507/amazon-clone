@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
@@ -11,6 +11,8 @@ import { red } from "@material-ui/core/colors";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { Box, Button } from "@material-ui/core";
 import Rating from "@material-ui/lab/Rating";
+import { UserContext } from "../UserContext";
+import { CartContext } from "../CartContext";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,7 +38,25 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Cards({ cardData }) {
+  const [user, setUser] = useContext(UserContext);
+
+  const [cartData, setCartData] = useState([]);
+
+  const value = useContext(CartContext);
+
   const classes = useStyles();
+
+  const cartHandler = (e) => {
+    // if (!user) {
+    //   return window.location.replace("/signin");
+    // }
+    const cart = cardData.filter((value) => {
+      return value._id === Number(e.target.id);
+    });
+    setCartData([...cartData, cart[0]]);
+    value.updateCount(value.count + 1);
+    value.addCartItems(cart[0]);
+  };
 
   return (
     <React.Fragment>
@@ -77,9 +97,13 @@ export default function Cards({ cardData }) {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="medium" className="border border-success">
+                <button
+                  className="btn btn-outline-success"
+                  onClick={cartHandler}
+                  id={value._id}
+                >
                   add to cart
-                </Button>
+                </button>
                 <Box
                   className="ml-auto mt-4"
                   component="fieldset"
