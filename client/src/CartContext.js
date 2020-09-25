@@ -15,6 +15,13 @@ const CartProvider = (props) => {
     setCartItems([...cartItems, items]);
   };
 
+  const removeCart = (id) => {
+    const product = cartItems.filter((items) => {
+      return Number(items._id) !== Number(id);
+    });
+    setCartItems(product);
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -22,6 +29,7 @@ const CartProvider = (props) => {
         updateCount: updateCount,
         cartItems: cartItems,
         addCartItems: addCartItems,
+        removeCart: removeCart,
       }}
     >
       {props.children}

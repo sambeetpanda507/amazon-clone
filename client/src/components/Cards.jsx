@@ -53,9 +53,17 @@ export default function Cards({ cardData }) {
     const cart = cardData.filter((value) => {
       return value._id === Number(e.target.id);
     });
+
     setCartData([...cartData, cart[0]]);
-    value.updateCount(value.count + 1);
-    value.addCartItems(cart[0]);
+    let isExist = cartData.filter((items) => {
+      return items._id === cart[0]._id;
+    }).length;
+    if (isExist === 0) {
+      value.updateCount(value.count + 1);
+      value.addCartItems(cart[0]);
+    } else {
+      window.alert("this item is already added to the cart");
+    }
   };
 
   return (
@@ -80,16 +88,21 @@ export default function Cards({ cardData }) {
               </CardMedia>
               <CardContent>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  M.R.P :{" "}
+                  M.R.P :
                   <span
                     className="text-secondary"
                     style={{ textDecoration: "line-through" }}
                   >
+                    {"₹ "}
                     {value.mrp}
                   </span>
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                  Price: <span className="text-danger">{value.price}</span>
+                  Price:
+                  <span className="text-danger">
+                    {"₹ "}
+                    {value.price}
+                  </span>
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
                   You save :{" "}

@@ -18,8 +18,8 @@ const cardData = [
     cardTitle: "Voltas Beko 8 Place Table Top Dishwasher (DT8S, Silver)",
     cardImg:
       "https://images-na.ssl-images-amazon.com/images/I/61w8zR6LbJL._SL1500_.jpg",
-    mrp: "₹ 25,990.00",
-    price: "₹ 21,499.00",
+    mrp: 25990.0,
+    price: 21499.0,
     youSave: "₹ 4,491.00 (17%)",
     star: 4,
   },
@@ -28,8 +28,8 @@ const cardData = [
     cardTitle: "Bosch 12 Place Settings Dishwasher (SMS66GI01I, Silver) ",
     cardImg:
       "https://images-na.ssl-images-amazon.com/images/I/81RYDgA32ML._SL1500_.jpg",
-    mrp: "₹ 35,490.00",
-    price: "₹ 30,499.00",
+    mrp: 35490.0,
+    price: 30499.0,
     youSave: "₹ 4,991.00 (14%)",
     star: 4.5,
   },
@@ -38,8 +38,8 @@ const cardData = [
     cardTitle: "Bosch 12 Place Settings Dishwasher (SMS66GI01I, Silver) ",
     cardImg:
       "https://images-na.ssl-images-amazon.com/images/I/71sDAeFafVL._SL1500_.jpg",
-    mrp: "₹ 39,490.00",
-    price: "₹ 34,499.00",
+    mrp: 39490.0,
+    price: 34499.0,
     youSave: "₹ 4,991.00 (14%)",
     star: 3.5,
   },
