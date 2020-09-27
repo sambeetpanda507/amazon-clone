@@ -9,7 +9,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import { Box, Button } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 import Rating from "@material-ui/lab/Rating";
 import { UserContext } from "../UserContext";
 import { CartContext } from "../CartContext";
@@ -47,9 +47,9 @@ export default function Cards({ cardData }) {
   const classes = useStyles();
 
   const cartHandler = (e) => {
-    // if (!user) {
-    //   return window.location.replace("/signin");
-    // }
+    if (!user) {
+      return window.location.replace("/signin");
+    }
     const cart = cardData.filter((value) => {
       return value._id === Number(e.target.id);
     });
@@ -59,7 +59,7 @@ export default function Cards({ cardData }) {
       return items._id === cart[0]._id;
     }).length;
     if (isExist === 0) {
-      value.updateCount(value.count + 1);
+      // value.updateCount(value.count + 1);
       value.addCartItems(cart[0]);
     } else {
       window.alert("this item is already added to the cart");
@@ -71,7 +71,7 @@ export default function Cards({ cardData }) {
       {cardData.map((value, index, arr) => {
         return (
           <div
-            className="col-md-6 col-lg-4 col-xl-4 col-sm-12 col-12 mt-2"
+            className="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 my-2"
             key={index}
           >
             <Card className={classes.root}>

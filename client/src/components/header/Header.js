@@ -244,7 +244,7 @@ function Header({ history }) {
             <li className="nav-item">
               <Link to="/cart">
                 <span className="nav-link" tabIndex="-1" aria-disabled="true">
-                  <Badge badgeContent={value.count} color="primary">
+                  <Badge badgeContent={value.cartItems.length} color="primary">
                     <ShoppingCartIcon />
                   </Badge>
                 </span>

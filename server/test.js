@@ -1,7 +1,3 @@
-import React from "react";
-import Header from "../header/Header";
-import Cards from "../Cards";
-
 const cardData = [
   {
     _id: Math.random(),
@@ -11,7 +7,6 @@ const cardData = [
     mrp: 25990.0,
     price: 21499.0,
     youSave: "₹ 4,491.00 (17%)",
-    count: 1,
     star: 4,
   },
   {
@@ -22,7 +17,6 @@ const cardData = [
     mrp: 35490.0,
     price: 30499.0,
     youSave: "₹ 4,991.00 (14%)",
-    count: 1,
     star: 4.5,
   },
   {
@@ -33,22 +27,16 @@ const cardData = [
     mrp: 39490.0,
     price: 34499.0,
     youSave: "₹ 4,991.00 (14%)",
-    count: 1,
     star: 3.5,
   },
 ];
 
-function Dishwashwer() {
-  return (
-    <div className="dishwasher">
-      <Header />
-      <div className="container my-4">
-        <div className="row">
-          <Cards cardData={cardData} />
-        </div>
-      </div>
-    </div>
-  );
-}
+// const sum = [
+//   { id: 1, price: 10 },
+//   { id: 2, price: 20 },
+//   { id: 3, price: 30 },
+// ];
 
-export default Dishwashwer;
+console.log(
+  cardData.reduce((accumulator, value) => accumulator + value.price, 0)
+);
